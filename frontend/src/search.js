@@ -1,7 +1,7 @@
 import React from 'react';
 import Loader from 'react-loader-spinner';
 
-const URL = 'http://157.245.129.79:5000/search/disease_search?query='
+const URL = 'http://34.222.190.54/api/search/disease_search?query='
 
 
 const ListItem = ({value}) => (

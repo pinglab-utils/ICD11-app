@@ -1,12 +1,16 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
+#from flask_cors import CORS
 
 from elasticsearch import Elasticsearch
 from elasticsearch_dsl import Search
 
 client = Elasticsearch()
 app = Flask(__name__)
-CORS(app)
+#CORS(app)
+
+@app.route('/')
+def test():
+    return "api successfully started"
 
 @app.route('/search/disease_search')
 def disease_search():
@@ -23,5 +27,5 @@ def disease_search():
         else:
             response['result'] = dict()
     return jsonify(response)
-
-app.run(host= '0.0.0.0', port=5000)
+if __name__ == '__main__':
+    app.run(host= '0.0.0.0', port=5000)
